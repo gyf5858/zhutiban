@@ -1,0 +1,104 @@
+body, object, iframe, h1, h2, h3, h4, h5, h6, blockquote, a, code, em, img, q, small, strong, li, ul, fieldset, form, label, table, tbody, tr, th, td {color: #333; font-size: 14px;   font-family: "Microsoft YaHei" ! important; margin: 0; padding: 0;}
+*{ margin: 0; padding: 0;}
+img{display: inline-block; outline: 0; border: 0;}
+ul li{list-style: none;}
+a{ text-decoration: none; outline: 0;}
+.fl{float: left;}
+.fr{float: right;}
+body {
+    font-family: "Microsoft YaHei" ! important;
+    color:black;
+}
+* {
+    color: #333;
+    font-family: "Microsoft YaHei" ! important;
+
+}
+html {
+    font-size:4.27vw;
+}
+
+h2, h3 ,h4{ font-size: 100%; font-weight: normal;}
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.header {
+    background-image: url("headerbj20191107_01.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 125px;
+    position:relative;
+}
+
+.header h1 {
+    color: white;
+    font-size: 1.4em;
+    display: flex;
+    align-items: center;
+    height: 118px;
+    width: 37%;
+    margin-left: 9%;
+}
+
+.contentImg img {
+    width: 100%;
+}
+
+.contentList {
+    margin-bottom: 30px;
+}
+
+.contentList .contentList_title h3 {
+    color:#1f3c5e;
+    font-size: 1.9em;
+    font-weight:bolder;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 10px;
+}
+.contentList .contentList_title .hg {
+    width: 78px;
+    height: 4px;
+    background-color: #4293f4;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+
+.list_txt ul li {
+    margin: 0 auto;
+    /* height: 35px; */
+    position: relative;
+    width: 70%;
+    background-color: #aed0eb;
+    margin-top: 20px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 10px;
+}
+
+.list_txt ul li a {
+    color:#333;
+    width: 100%;
+    display: inline-block;
+}
+
+#addtianjia {
+    margin:0 auto;
+    text-align: center;
+    line-height: 15px;
+    margin-top: 10px;
+    width: 70%;
+}

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>我要开奶茶店</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+</head>
+<style>
+    body, object, iframe, h1, h2, h3, h4, h5, h6, blockquote, a, code, em, img, q, small, strong, li, ul, fieldset, form, label, table, tbody, tr, th, td {color: #333; font-size: 14px;   font-family: "Microsoft YaHei" ! important; margin: 0; padding: 0;}
+    *{ margin: 0; padding: 0;}
+    img{display: inline-block; outline: 0; border: 0;}
+    ul li{list-style: none;}
+    a{ text-decoration: none; outline: 0;}
+    .fl{float: left;}
+    .fr{float: right;}
+    body {
+        font-family: "Microsoft YaHei" ! important;
+        color:black;
+    }
+    * {
+        color: #333;
+        font-family: "Microsoft YaHei" ! important;
+
+    }
+    html {
+        font-size:4.27vw;
+    }
+
+    h2, h3 ,h4{ font-size: 100%; font-weight: normal;}
+
+    .clearfix:before, .clearfix:after {
+        content: "";
+        display: table;
+    }
+
+    .clearfix:after {
+        clear: both;
+    }
+
+    .clearfix {
+        *zoom: 1;
+    }
+
+    .header {
+        background-image: url("./headerbj20191107_01.png");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        width: 100%;
+        height: 125px;
+        position:relative;
+    }
+
+    .header h1 {
+        color: white;
+        font-size: 1.4em;
+        display: flex;
+        align-items: center;
+        height: 118px;
+        width: 37%;
+        margin-left: 9%;
+    }
+
+    .contentImg img {
+        width: 100%;
+    }
+
+    .contentList {
+        margin-bottom: 30px;
+    }
+
+    .contentList .contentList_title h3 {
+        color:#1f3c5e;
+        font-size: 1.9em;
+        font-weight:bolder;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .contentList .contentList_title .hg {
+        width: 78px;
+        height: 4px;
+        background-color: #4293f4;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+
+
+    .list_txt ul li {
+        margin: 0 auto;
+        width: 70%;
+        background-color: #aed0eb;
+        margin-top: 20px;
+        text-align: center;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    .list_txt ul li a {
+        color:#333;
+        width: 100%;
+        display: inline-block;
+    }
+
+    #addtianjia {
+        margin:0 auto;
+        text-align: center;
+        line-height: 15px;
+        margin-top: 10px;
+        width: 70%;
+    }
+</style>
+<body>
+    <div class="header">
+        <h1 id="titlev">我要从事城市生活垃圾经营性处理服务</h1>
+    </div>
+    <div class="contentImg">
+        <img src="content20191108_02.png" alt="">
+    </div>
+    <div class="contentList">
+        <div class="contentList_title">
+            <h3>"事项主题"一览表</h3>
+            <div class="hg"></div>
+        </div>
+        <div class="list_txt">
+            <ul id="txt_list">
+                <li><a href="#"> 银行开户</a></li>
+                <li><a href="#"> 食品经营许可证核发</a></li>
+                <li><a href="#"> 印章刻制</a></li>
+                <li><a href="#"> 办理食品经营许可</a></li>
+                <li><a href="#"> 店面招牌申请</a></li>
+                <li><a href="#">6. 消防审验</a></li>
+                <li><a href="javascript:void(0)">7. 纳税申报</a></li>
+                <li><a href="javascript:void(0)">8. 办理社保</a></li>
+
+            </ul>
+        </div>
+    </div>
+
+    <script>
+
+        // 获取列表元素
+        var txtList = document.getElementById("txt_list").children;
+        // 循环
+        for (var i = 0; i < txtList.length; i++) {
+            handle(txtList, txtList[i], '银行开户', '提示：该事项可前往各大银行办理')
+            handle(txtList, txtList[i], '纳税申报', '提示：该事项可前往深圳市社会保险基金管理局官方网站申报')
+            handle(txtList, txtList[i], '办理社保', '提示：该事项可前往国家税务总局深圳市税务局官方网站申报')
+            handle(txtList, txtList[i], '国际货运代理企业备案', '提示：该事项可前往广东省"多证合一"备案信息申报系统网站申报')
+            handle(txtList, txtList[i], '外商投资企业商务备案', '提示：该事项可前往广东省"多证合一"备案信息申报系统网站申报')
+        }
+
+        function handle(list, item, text, tip) {
+            if (item.innerHTML.indexOf(text) > -1) {
+                var text = item.children[0].innerText;
+                item.innerHTML = text;
+                item.addEventListener('click', function (event) {
+                    var addtianjia = document.getElementById("addtianjia");
+                    // if (addtianjia) {
+                    //     addtianjia.remove();
+                    // }
+                    addtianjia && addtianjia.remove();
+                    if(getComputedStyle(this,null).backgroundColor != "rgb(62, 145, 220)"){
+                        for (var j = 0; j < list.length; j++) {
+                            if (list[j] == this) {
+                                this.style.backgroundColor = "rgb(62, 145, 220)";
+                                this.style.color = "#fff";
+                                var creatDIV = document.createElement("div");
+                                creatDIV.innerText = tip;
+                                creatDIV.id = "addtianjia";
+                                var parent = document.getElementById("txt_list")
+                                if (parent.lastChild == this) {
+                                    // 如果最后的节点是目标元素，则直接添加。因为默认是最后
+                                    parent.appendChild(creatDIV);
+                                } else {
+                                    parent.insertBefore(creatDIV, this.nextSibling);
+                                    //如果不是，则插入在目标元素的下一个兄弟节点 的前面。也就是目标元素的后面
+                                }
+                            } else {
+                                (list[j].id!=='addtianjia')&& (list[j].style.backgroundColor = "#aed0eb");
+                                (list[j].id!=='addtianjia')&& (list[j].style.color = "#333");
+                                addtianjia && addtianjia.remove();
+
+                            }
+                        }
+                    }else {
+                     this.style.backgroundColor = "#aed0eb";
+                     this.style.color = "#333";
+                    }
+
+
+   
+
+                })
+            };
+        }
+
+
+
+
+        var aa = document.getElementsByTagName("a");
+        var arr = [];
+
+        // 循环将不需跳转的li标签去除a标签
+        for (var i = 0; i < aa.length; i++) {
+            if (aa[i].innerHTML == "银行开户" || aa[i].innerHTML == "纳税申报" || aa[i].innerHTML == "社保开户" || aa[i].innerHTML == "国际货运代理企业备案" || aa[i].innerHTML == "外商投资企业商务备案") {
+                aa[i].parentNode.remove(aa[i]);
+            } else {
+                          aa[i].onclick = function () {
+                    window.sc.openNewWebView({ url: this.href })
+                    return false;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
